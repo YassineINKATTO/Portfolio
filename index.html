@@ -1,0 +1,515 @@
+<!DOCTYPE html>
+<html lang="fr" class="scroll-smooth">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Yassine Inkatto - Portfolio</title>
+    <!-- Favicon professionnel avec vos initiales (YI) généré en SVG -->
+    <link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><rect width='100' height='100' rx='20' fill='%231e3a8a'/><text x='50' y='70' font-family='Arial, sans-serif' font-size='60' font-weight='bold' fill='white' text-anchor='middle'>YI</text></svg>">
+    <!-- Tailwind CSS pour le style -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <!-- FontAwesome pour les icônes professionnelles -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <!-- Google Fonts -->
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    fontFamily: {
+                        sans: ['Inter', 'sans-serif'],
+                    },
+                    colors: {
+                        primary: '#1e3a8a', // Bleu marine professionnel
+                        secondary: '#3b82f6', // Bleu clair pour les accents
+                        dark: '#0f172a', // Ardoise très foncée
+                        light: '#f8fafc',
+                    }
+                }
+            }
+        }
+    </script>
+    <style>
+        /* Styles personnalisés légers pour compléter Tailwind */
+        body { font-family: 'Inter', sans-serif; }
+        .project-card:hover { transform: translateY(-4px); }
+        .transition-all { transition-property: all; transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1); transition-duration: 300ms; }
+        
+        /* Personnalisation de la barre de défilement */
+        ::-webkit-scrollbar { width: 8px; }
+        ::-webkit-scrollbar-track { background: #f1f1f1; }
+        ::-webkit-scrollbar-thumb { background: #cbd5e1; border-radius: 4px; }
+        ::-webkit-scrollbar-thumb:hover { background: #94a3b8; }
+    </style>
+</head>
+<body class="bg-slate-50 text-slate-800 antialiased selection:bg-secondary selection:text-white">
+
+    <!-- Navigation -->
+    <nav class="fixed w-full bg-white/90 backdrop-blur-md shadow-sm z-50 border-b border-slate-200">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="flex justify-between h-16">
+                <div class="flex items-center">
+                    <span class="font-bold text-xl text-primary tracking-tight">Y. INKATTO</span>
+                </div>
+                <div class="hidden md:flex items-center space-x-8 font-medium text-sm text-slate-600">
+                    <a href="#resume" class="hover:text-primary transition-colors">Résumé</a>
+                    <a href="#projets" class="hover:text-primary transition-colors">Projets</a>
+                    <a href="#competences" class="hover:text-primary transition-colors">Compétences</a>
+                    <a href="#formations" class="hover:text-primary transition-colors">Enseignement</a>
+                    <a href="#contact" class="px-4 py-2 rounded-md bg-primary text-white hover:bg-blue-800 transition-colors shadow-sm">Contact</a>
+                </div>
+                <!-- Mobile menu button -->
+                <div class="flex items-center md:hidden">
+                    <button id="mobile-menu-btn" class="text-slate-600 hover:text-primary focus:outline-none">
+                        <i class="fas fa-bars text-2xl"></i>
+                    </button>
+                </div>
+            </div>
+        </div>
+        <!-- Mobile Menu -->
+        <div id="mobile-menu" class="hidden md:hidden bg-white border-b border-slate-200">
+            <div class="px-2 pt-2 pb-3 space-y-1 sm:px-3 text-center shadow-lg">
+                <a href="#resume" class="block px-3 py-2 rounded-md text-base font-medium text-slate-700 hover:text-primary hover:bg-slate-50">Résumé</a>
+                <a href="#projets" class="block px-3 py-2 rounded-md text-base font-medium text-slate-700 hover:text-primary hover:bg-slate-50">Projets</a>
+                <a href="#competences" class="block px-3 py-2 rounded-md text-base font-medium text-slate-700 hover:text-primary hover:bg-slate-50">Compétences</a>
+                <a href="#formations" class="block px-3 py-2 rounded-md text-base font-medium text-slate-700 hover:text-primary hover:bg-slate-50">Enseignement</a>
+                <a href="#contact" class="block px-3 py-2 rounded-md text-base font-medium text-primary font-bold hover:bg-slate-50">Contact</a>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Header / Hero Section -->
+    <header class="bg-dark text-white pt-32 pb-20 relative overflow-hidden">
+        <!-- Abstract background pattern -->
+        <div class="absolute inset-0 opacity-10" style="background-image: radial-gradient(#3b82f6 1px, transparent 1px); background-size: 32px 32px;"></div>
+        
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10 flex flex-col md:flex-row items-center justify-between">
+            <div class="md:w-2/3">
+                <div class="inline-block px-3 py-1 bg-blue-900/50 border border-blue-700 text-blue-300 rounded-full text-xs font-semibold tracking-wider mb-4">
+                    PROMOTION 2028 | ENSAM MEKNÈS
+                </div>
+                <h1 class="text-4xl md:text-5xl lg:text-6xl font-bold tracking-tight mb-4">
+                    Yassine Inkatto
+                </h1>
+                <h2 class="text-xl md:text-2xl text-slate-300 font-light mb-6">
+                    Étudiant Ingénieur Génie Électromécanique & Digitalisation Industrielle
+                </h2>
+                
+                <div class="flex flex-wrap gap-2 mb-8">
+                    <span class="px-3 py-1 bg-slate-800 rounded text-sm text-slate-300 border border-slate-700"><i class="fas fa-robot mr-2"></i>ROS2</span>
+                    <span class="px-3 py-1 bg-slate-800 rounded text-sm text-slate-300 border border-slate-700"><i class="fas fa-microchip mr-2"></i>PCB Design</span>
+                    <span class="px-3 py-1 bg-slate-800 rounded text-sm text-slate-300 border border-slate-700"><i class="fas fa-network-wired mr-2"></i>IoT / IIoT</span>
+                    <span class="px-3 py-1 bg-slate-800 rounded text-sm text-slate-300 border border-slate-700"><i class="fas fa-drafting-compass mr-2"></i>CAO</span>
+                    <span class="px-3 py-1 bg-slate-800 rounded text-sm text-slate-300 border border-slate-700"><i class="fas fa-cogs mr-2"></i>Cinématique Inverse</span>
+                    <span class="px-3 py-1 bg-slate-800 rounded text-sm text-slate-300 border border-slate-700"><i class="fas fa-industry mr-2"></i>Industrie 4.0</span>
+                </div>
+
+                <div class="flex gap-4">
+                    <a href="#projets" class="px-6 py-3 bg-secondary text-white rounded-md font-medium hover:bg-blue-600 transition-colors shadow-lg shadow-blue-500/30">
+                        Voir les projets
+                    </a>
+                    <a href="#contact" class="px-6 py-3 bg-slate-800 border border-slate-600 text-white rounded-md font-medium hover:bg-slate-700 transition-colors">
+                        Me contacter
+                    </a>
+                </div>
+            </div>
+            
+            <div class="md:w-1/3 mt-12 md:mt-0 flex justify-center">
+                <!-- Photo de profil avec object-cover pour remplir parfaitement le cadre circulaire -->
+                <div class="relative w-48 h-48 md:w-64 md:h-64 rounded-full border-4 border-slate-700 overflow-hidden bg-slate-800 shadow-2xl group">
+                    <img src="Face.jpg" alt="Yassine Inkatto" class="w-full h-full object-cover object-center">
+                </div>
+            </div>
+        </div>
+    </header>
+
+    <!-- Section: Résumé Professionnel -->
+    <section id="resume" class="py-20 bg-white">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="flex items-center mb-8">
+                <div class="w-8 h-1 bg-secondary mr-4"></div>
+                <h2 class="text-3xl font-bold text-slate-900">Résumé</h2>
+            </div>
+            
+            <div class="grid grid-cols-1 lg:grid-cols-3 gap-12">
+                <div class="lg:col-span-2 space-y-6 text-slate-600 leading-relaxed text-lg">
+                    <p>
+                        Étudiant ingénieur en 3ème année à l'ENSAM Meknès, spécialité <strong>Génie Électromécanique et Digitalisation Industrielle</strong>. Passionné par la robotique avancée, les systèmes embarqués et l'Industrie 4.0, je conçois et développe des systèmes mécatroniques complets : de la modélisation CAO et du dimensionnement mécanique, jusqu'à l'architecture logicielle ROS2 et la supervision industrielle IIoT.
+                    </p>
+                    <p>
+                        <strong>Chef Technique</strong> du Club Robotique & Innovation Arts et Métiers (CRIAM) de l'ENSAM Meknès, j'encadre des équipes pluridisciplinaires sur des projets à forte valeur technique. Lauréat du 1er Prix au Rassemblement Euroméditerranéen des Clubs Universitaires, je suis également formateur interne en ROS2, Arduino/ESP32, et en développement de jeux (Unreal Engine / Unity3D).
+                    </p>
+                </div>
+                
+                <div class="bg-slate-50 border border-slate-200 p-6 rounded-xl shadow-sm h-fit">
+                    <h3 class="font-semibold text-slate-900 mb-4 border-b border-slate-200 pb-2">Informations Clés</h3>
+                    <ul class="space-y-4">
+                        <li class="flex items-start">
+                            <i class="fas fa-map-marker-alt text-secondary mt-1 w-6"></i>
+                            <div>
+                                <span class="block font-medium text-slate-900">Localisation</span>
+                                <span class="text-sm text-slate-600">Meknès, Fès-Meknès, Maroc</span>
+                            </div>
+                        </li>
+                        <li class="flex items-start">
+                            <i class="fas fa-graduation-cap text-secondary mt-1 w-6"></i>
+                            <div>
+                                <span class="block font-medium text-slate-900">École</span>
+                                <span class="text-sm text-slate-600">ENSAM Meknès (2023-2028)</span>
+                            </div>
+                        </li>
+                        <li class="flex items-start">
+                            <i class="fas fa-trophy text-yellow-500 mt-1 w-6"></i>
+                            <div>
+                                <span class="block font-medium text-slate-900">Distinction</span>
+                                <span class="text-sm text-slate-600">1er Prix - Rassemblement Euroméditerranéen (UEMF) - 2024</span>
+                            </div>
+                        </li>
+                        <li class="flex items-start">
+                            <i class="fas fa-users-cog text-secondary mt-1 w-6"></i>
+                            <div>
+                                <span class="block font-medium text-slate-900">Leadership</span>
+                                <span class="text-sm text-slate-600">Chef Technique CRIAM</span>
+                            </div>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Section: Projets Techniques -->
+    <section id="projets" class="py-20 bg-slate-50 border-t border-slate-200">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="flex items-center mb-12">
+                <div class="w-8 h-1 bg-secondary mr-4"></div>
+                <h2 class="text-3xl font-bold text-slate-900">Projets Ingénierie & Réalisations</h2>
+            </div>
+
+            <!-- Grille de projets -->
+            <div class="grid grid-cols-1 md:grid-cols-2 gap-8">
+                
+                <!-- Projet 1 -->
+                <div class="bg-white rounded-xl shadow-sm border border-slate-200 p-8 project-card transition-all flex flex-col">
+                    <div class="flex justify-between items-start mb-4">
+                        <div class="bg-blue-100 text-blue-800 text-xs font-bold px-3 py-1 rounded shadow-sm">Projet Personnel</div>
+                        <i class="fas fa-spider text-3xl text-slate-300"></i>
+                    </div>
+                    <h3 class="text-xl font-bold text-slate-900 mb-2">Robot Tétrapode d'Intervention</h3>
+                    <p class="text-sm text-secondary font-medium mb-4">Cinématique, ROS2 & Jumeau Numérique</p>
+                    <div class="text-slate-600 text-sm space-y-3 flex-grow">
+                        <p><strong>Cinématique Inverse (IK) :</strong> Modélisation mathématique et implémentation C++ pour piloter 12 servomoteurs (3 DOF/patte). Développement d'algorithmes de génération de trajectoires (gait algorithms).</p>
+                        <p><strong>Jumeau Numérique (ROS2) :</strong> Déploiement du modèle mathématique dans ROS2. Validation de la cinématique et du comportement dynamique sous RViz.</p>
+                        <p><strong>Modularité :</strong> Architecture conçue pour supporter un bras manipulateur et la vision par ordinateur pour télémanipulation en milieu hostile.</p>
+                    </div>
+                </div>
+
+                <!-- Projet 2 -->
+                <div class="bg-white rounded-xl shadow-sm border border-slate-200 p-8 project-card transition-all flex flex-col">
+                    <div class="flex justify-between items-start mb-4">
+                        <div class="bg-emerald-100 text-emerald-800 text-xs font-bold px-3 py-1 rounded shadow-sm">Travail d'Équipe</div>
+                        <i class="fas fa-robot text-3xl text-slate-300"></i>
+                    </div>
+                    <h3 class="text-xl font-bold text-slate-900 mb-2">Bras Robotique - Soudage par Point</h3>
+                    <p class="text-sm text-secondary font-medium mb-4">Automatisé & Supervision IIoT (Node-RED)</p>
+                    <div class="text-slate-600 text-sm space-y-3 flex-grow">
+                        <p class="font-semibold text-slate-800 border-b border-slate-100 pb-2 mb-3"><i class="fas fa-user-check text-secondary mr-2"></i>Mes contributions techniques :</p>
+                        <p><strong>Contrôle Cinématique :</strong> Architecture distribuée avec Arduino UNO (algorithmes IK pour manipulateur 5-DOF) et module ESP32 (passerelle Edge/IoT).</p>
+                        <p><strong>Supervision SCADA :</strong> Télémétrie MQTT via HiveMQ. Dashboard Node-RED intégrant traçabilité, détection d'anomalies et arrêt d'urgence (E-Stop).</p>
+                        <p><strong>Industrie 4.0 :</strong> Prototypage (PoC) doté d'une architecture évolutive, conçue pour un passage à l'échelle intégrant des capteurs et actionneurs industriels lourds.</p>
+                    </div>
+                </div>
+
+                <!-- Projet 3 -->
+                <div class="bg-white rounded-xl shadow-sm border border-slate-200 p-8 project-card transition-all flex flex-col">
+                    <div class="flex justify-between items-start mb-4">
+                        <div class="bg-emerald-100 text-emerald-800 text-xs font-bold px-3 py-1 rounded shadow-sm">Travail d'Équipe</div>
+                        <i class="fas fa-hand-paper text-3xl text-slate-300"></i>
+                    </div>
+                    <h3 class="text-xl font-bold text-slate-900 mb-2">Main Robotique Myoélectrique</h3>
+                    <p class="text-sm text-secondary font-medium mb-4">Prothèse Bionique, EMG, PCB KiCad & IA</p>
+                    <div class="text-slate-600 text-sm space-y-3 flex-grow">
+                        <p class="font-semibold text-slate-800 border-b border-slate-100 pb-2 mb-3"><i class="fas fa-user-check text-secondary mr-2"></i>Mon rôle (Hardware & IA) :</p>
+                        <p><strong>Hardware :</strong> Conception PCB d'un capteur EMG propriétaire via KiCad (schémas, routage anti-EMI).</p>
+                        <p><strong>Traitement du Signal & IA :</strong> Implémentation DSP et modèles de Machine Learning pour classifier les patterns EMG et déclencher les préhensions.</p>
+                        <p><strong>Mécanique :</strong> Cinématique inverse des doigts et optimisation topologique (CAO) pour portabilité et robustesse.</p>
+                    </div>
+                </div>
+
+                <!-- Projet 4 -->
+                <div class="bg-white rounded-xl shadow-sm border border-slate-200 p-8 project-card transition-all flex flex-col">
+                    <div class="flex justify-between items-start mb-4">
+                        <div class="bg-emerald-100 text-emerald-800 text-xs font-bold px-3 py-1 rounded shadow-sm">Travail d'Équipe</div>
+                        <i class="fas fa-car-side text-3xl text-slate-300"></i>
+                    </div>
+                    <h3 class="text-xl font-bold text-slate-900 mb-2">Bras Robotique d'Inspection Sous-Caisse</h3>
+                    <p class="text-sm text-secondary font-medium mb-4">Mécatronique & ROS2</p>
+                    <div class="text-slate-600 text-sm space-y-3 flex-grow">
+                        <p class="font-semibold text-slate-800 border-b border-slate-100 pb-2 mb-3"><i class="fas fa-user-check text-secondary mr-2"></i>Ma contribution (Mécanique & ROS2) :</p>
+                        <p><strong>Modélisation CAO & RDM :</strong> Dimensionnement, sélection moteurs, analyse des efforts. Articulation du coude à 270° pour les environnements exigus.</p>
+                        <p><strong>ROS2 :</strong> Orchestration des actionneurs et télémétrie. Contrôleurs bas niveau et IK pour positionnement de haute précision.</p>
+                        <p><strong>Temps Réel :</strong> Optimisation des flux de données pour supprimer la latence entre le calcul et l'exécution.</p>
+                    </div>
+                </div>
+
+                <!-- Projet 5 -->
+                <div class="bg-white rounded-xl shadow-sm border border-slate-200 p-8 project-card transition-all flex flex-col">
+                    <div class="flex justify-between items-start mb-4">
+                        <div class="bg-emerald-100 text-emerald-800 text-xs font-bold px-3 py-1 rounded shadow-sm">Travail d'Équipe</div>
+                        <i class="fas fa-truck-loading text-3xl text-slate-300"></i>
+                    </div>
+                    <h3 class="text-xl font-bold text-slate-900 mb-2">Système d'Approvisionnement Autonome</h3>
+                    <p class="text-sm text-secondary font-medium mb-4">AGV + Bras Manipulateur (Atelier)</p>
+                    <div class="text-slate-600 text-sm space-y-3 flex-grow">
+                        <p class="font-semibold text-slate-800 border-b border-slate-100 pb-2 mb-3"><i class="fas fa-user-check text-secondary mr-2"></i>Mes réalisations (Navigation & Manip.) :</p>
+                        <p><strong>Navigation Autonome :</strong> Guidage d'un chariot mobile (AGV) via capteur LiDAR sous ROS2.</p>
+                        <p><strong>Synchronisation Complexe :</strong> Coordination entre l'AGV et un bras manipulateur pour des opérations de pick-and-place autonomes en atelier.</p>
+                    </div>
+                </div>
+
+                <!-- Projet 6 -->
+                <div class="bg-white rounded-xl shadow-sm border border-slate-200 p-8 project-card transition-all flex flex-col">
+                    <div class="flex justify-between items-start mb-4">
+                        <div class="bg-blue-100 text-blue-800 text-xs font-bold px-3 py-1 rounded shadow-sm">Projet Personnel</div>
+                        <i class="fas fa-seedling text-3xl text-slate-300"></i>
+                    </div>
+                    <h3 class="text-xl font-bold text-slate-900 mb-2">Système d'Irrigation Autonome IIoT</h3>
+                    <p class="text-sm text-secondary font-medium mb-4">Maintenance Prédictive, Grafana & InfluxDB</p>
+                    <div class="text-slate-600 text-sm space-y-3 flex-grow">
+                        <p><strong>Architecture Distribuée :</strong> Raspberry Pi (Gateway/Broker MQTT) et ESP32 (Edge/Acquisition) pour automatiser l'irrigation.</p>
+                        <p><strong>Pipeline Data :</strong> Orchestration via Node-RED, stockage InfluxDB et supervision via Grafana.</p>
+                        <p><strong>Maintenance Prédictive :</strong> Analyse des cycles de pompes pour anticiper les défaillances industrielles.</p>
+                    </div>
+                </div>
+
+                <!-- Projet 7 -->
+                <div class="bg-white rounded-xl shadow-sm border border-slate-200 p-8 project-card transition-all flex flex-col">
+                    <div class="flex justify-between items-start mb-4">
+                        <div class="bg-emerald-100 text-emerald-800 text-xs font-bold px-3 py-1 rounded shadow-sm">Travail d'Équipe</div>
+                        <i class="fas fa-cogs text-3xl text-slate-300"></i>
+                    </div>
+                    <h3 class="text-xl font-bold text-slate-900 mb-2">Motoréducteur Industriel pour Convoyeur</h3>
+                    <p class="text-sm text-secondary font-medium mb-4">Conception & Simulation FEA (Fusion 360)</p>
+                    <div class="text-slate-600 text-sm space-y-3 flex-grow">
+                        <p class="font-semibold text-slate-800 border-b border-slate-100 pb-2 mb-3"><i class="fas fa-user-check text-secondary mr-2"></i>Mes tâches (RDM & CAO) :</p>
+                        <p><strong>RDM & Dimensionnement :</strong> Calculs des éléments de transmission, efforts de cisaillement, torsion et flexion. Choix des moteurs, accouplements, roues dentées et arbres.</p>
+                        <p><strong>CAO & Prototypage :</strong> Modèle paramétrique sous Fusion 360, plans ISO, et simulations FEA.</p>
+                    </div>
+                </div>
+
+                <!-- Projet 8 -->
+                <div class="bg-white rounded-xl shadow-sm border border-slate-200 p-8 project-card transition-all flex flex-col">
+                    <div class="flex justify-between items-start mb-4">
+                        <div class="bg-purple-100 text-purple-800 text-xs font-bold px-3 py-1 rounded shadow-sm">Compétition | 1er Prix</div>
+                        <i class="fas fa-award text-3xl text-slate-300"></i>
+                    </div>
+                    <h3 class="text-xl font-bold text-slate-900 mb-2">Smart Farm - Ferme Intelligente</h3>
+                    <p class="text-sm text-secondary font-medium mb-4">Rassemblement Euroméditerranéen (UEMF)</p>
+                    <div class="text-slate-600 text-sm space-y-3 flex-grow">
+                        <p class="font-semibold text-slate-800 border-b border-slate-100 pb-2 mb-3"><i class="fas fa-user-check text-secondary mr-2"></i>Ma contribution (Soutenance) :</p>
+                        <p><strong>1ère Place Nationale :</strong> Victoire face à l'élite des clubs d'ingénierie marocains (Représentation ENSAM Meknès).</p>
+                        <p><strong>Soutenance :</strong> Présentation technique sur l'optimisation des ressources et l'architecture IoT agricole (Agriculture 4.0).</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Section: Compétences -->
+    <section id="competences" class="py-20 bg-white">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="flex items-center mb-12">
+                <div class="w-8 h-1 bg-secondary mr-4"></div>
+                <h2 class="text-3xl font-bold text-slate-900">Compétences Techniques</h2>
+            </div>
+
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+                <!-- Catégorie 1 -->
+                <div class="border border-slate-200 rounded-xl p-6 bg-slate-50">
+                    <h3 class="text-lg font-bold text-primary mb-4 flex items-center border-b border-slate-200 pb-2">
+                        <i class="fas fa-robot mr-3"></i> Robotique & Systèmes Autonomes
+                    </h3>
+                    <ul class="space-y-2 text-sm text-slate-700">
+                        <li><i class="fas fa-check text-secondary mr-2"></i> <strong>ROS2 :</strong> Nodes, Topics, Services, Actions, Navigation</li>
+                        <li><i class="fas fa-check text-secondary mr-2"></i> <strong>Cinématique (IK) :</strong> Implémentation C++, Gait Algorithms</li>
+                        <li><i class="fas fa-check text-secondary mr-2"></i> <strong>Simulation :</strong> RViz, Jumeau Numérique (Digital Twin)</li>
+                        <li><i class="fas fa-check text-secondary mr-2"></i> <strong>Systèmes Mobiles :</strong> AGV/AMR, Navigation LIDAR, SLAM</li>
+                    </ul>
+                </div>
+
+                <!-- Catégorie 2 -->
+                <div class="border border-slate-200 rounded-xl p-6 bg-slate-50">
+                    <h3 class="text-lg font-bold text-primary mb-4 flex items-center border-b border-slate-200 pb-2">
+                        <i class="fas fa-microchip mr-3"></i> Électronique & Embarqué
+                    </h3>
+                    <ul class="space-y-2 text-sm text-slate-700">
+                        <li><i class="fas fa-check text-secondary mr-2"></i> <strong>PCB Design :</strong> KiCad (Schémas, Routage EMI, Gerber)</li>
+                        <li><i class="fas fa-check text-secondary mr-2"></i> <strong>Microcontrôleurs :</strong> Arduino, ESP32, STM32, Raspberry Pi</li>
+                        <li><i class="fas fa-check text-secondary mr-2"></i> <strong>Signal (DSP) :</strong> Filtrage numérique, EMG</li>
+                        <li><i class="fas fa-check text-secondary mr-2"></i> <strong>IA Embarquée :</strong> Machine Learning (Classification)</li>
+                    </ul>
+                </div>
+
+                <!-- Catégorie 3 -->
+                <div class="border border-slate-200 rounded-xl p-6 bg-slate-50">
+                    <h3 class="text-lg font-bold text-primary mb-4 flex items-center border-b border-slate-200 pb-2">
+                        <i class="fas fa-network-wired mr-3"></i> IIoT & Automatisme Industriel
+                    </h3>
+                    <ul class="space-y-2 text-sm text-slate-700">
+                        <li><i class="fas fa-check text-secondary mr-2"></i> <strong>Protocoles :</strong> MQTT, Modbus, OPC UA, HTTP/REST</li>
+                        <li><i class="fas fa-check text-secondary mr-2"></i> <strong>Supervision SCADA :</strong> Node-RED, Grafana</li>
+                        <li><i class="fas fa-check text-secondary mr-2"></i> <strong>Base de Données :</strong> InfluxDB (Time-series)</li>
+                        <li><i class="fas fa-check text-secondary mr-2"></i> <strong>Sécurité :</strong> E-Stop, Normes machines industrielles</li>
+                    </ul>
+                </div>
+
+                <!-- Catégorie 4 -->
+                <div class="border border-slate-200 rounded-xl p-6 bg-slate-50">
+                    <h3 class="text-lg font-bold text-primary mb-4 flex items-center border-b border-slate-200 pb-2">
+                        <i class="fas fa-drafting-compass mr-3"></i> Conception Mécanique & CAO
+                    </h3>
+                    <ul class="space-y-2 text-sm text-slate-700">
+                        <li><i class="fas fa-check text-secondary mr-2"></i> <strong>Logiciels CAO :</strong> SolidWorks, Autodesk Fusion 360, AutoCAD, Catia V5</li>
+                        <li><i class="fas fa-check text-secondary mr-2"></i> <strong>Dimensionnement / RDM :</strong> RDM6, Calcul des contraintes, Conception mécanique standardisée</li>
+                        <li><i class="fas fa-check text-secondary mr-2"></i> <strong>Simulation FEA :</strong> Analyse par Éléments Finis</li>
+                        <li><i class="fas fa-check text-secondary mr-2"></i> <strong>Dessin Industriel :</strong> Normes ISO, Dessin en format A0</li>
+                    </ul>
+                </div>
+
+                <!-- Catégorie 5 -->
+                <div class="border border-slate-200 rounded-xl p-6 bg-slate-50">
+                    <h3 class="text-lg font-bold text-primary mb-4 flex items-center border-b border-slate-200 pb-2">
+                        <i class="fas fa-code mr-3"></i> Programmation & Développement
+                    </h3>
+                    <div class="flex flex-wrap gap-2 mt-3">
+                        <span class="px-3 py-1 bg-white border border-slate-300 rounded-full text-sm font-medium text-slate-700">C / C++</span>
+                        <span class="px-3 py-1 bg-white border border-slate-300 rounded-full text-sm font-medium text-slate-700">Python</span>
+                        <span class="px-3 py-1 bg-white border border-slate-300 rounded-full text-sm font-medium text-slate-700">JavaScript</span>
+                        <span class="px-3 py-1 bg-white border border-slate-300 rounded-full text-sm font-medium text-slate-700">Node-RED</span>
+                        <span class="px-3 py-1 bg-white border border-slate-300 rounded-full text-sm font-medium text-slate-700">Algorithmique</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Section: Formations & Enseignement -->
+    <section id="formations" class="py-20 bg-slate-50 border-t border-slate-200">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="flex items-center mb-12">
+                <div class="w-8 h-1 bg-secondary mr-4"></div>
+                <h2 class="text-3xl font-bold text-slate-900">Enseignement & Leadership</h2>
+            </div>
+
+            <div class="relative border-l-2 border-slate-200 ml-3 md:ml-0 md:pl-0">
+                <!-- Item 1 -->
+                <div class="mb-10 ml-6 md:ml-8 relative">
+                    <div class="absolute -left-8 md:-left-[35px] mt-1.5 w-4 h-4 rounded-full border-2 border-secondary bg-white"></div>
+                    <div class="bg-white p-6 rounded-lg shadow-sm border border-slate-200">
+                        <h3 class="text-xl font-bold text-slate-900">Chef Technique - CRIAM</h3>
+                        <p class="text-sm text-slate-500 mb-3">Club Robotique & Innovation Arts et Métiers</p>
+                        <p class="text-slate-600 text-sm">Pilotage technique de l'ensemble des projets robotiques (PCB, ROS2, CAO, intégration). Encadrement des membres juniors et représentation lors de compétitions (1er Prix UEMF).</p>
+                    </div>
+                </div>
+
+                <!-- Item 2 -->
+                <div class="mb-10 ml-6 md:ml-8 relative">
+                    <div class="absolute -left-8 md:-left-[35px] mt-1.5 w-4 h-4 rounded-full border-2 border-slate-400 bg-white"></div>
+                    <div class="bg-white p-6 rounded-lg shadow-sm border border-slate-200">
+                        <h3 class="text-xl font-bold text-slate-900">Formateur en Robotique Avancée (ROS2)</h3>
+                        <p class="text-sm text-slate-500 mb-3">Interne ENSAM Meknès</p>
+                        <p class="text-slate-600 text-sm">Animation de formations avancées sur ROS2, l'architecture distribuée, la navigation autonome et l'intégration Raspberry Pi pour les membres du club.</p>
+                    </div>
+                </div>
+
+                <!-- Item 3 -->
+                <div class="mb-10 ml-6 md:ml-8 relative">
+                    <div class="absolute -left-8 md:-left-[35px] mt-1.5 w-4 h-4 rounded-full border-2 border-slate-400 bg-white"></div>
+                    <div class="bg-white p-6 rounded-lg shadow-sm border border-slate-200">
+                        <h3 class="text-xl font-bold text-slate-900">Formateur IoT (Arduino, ESP32, Node-RED)</h3>
+                        <p class="text-sm text-slate-500 mb-3">Interne ENSAM Meknès</p>
+                        <p class="text-slate-600 text-sm">Sessions pratiques sur l'électronique embarquée et les protocoles industriels (MQTT, Modbus, HTTP) orientées projets concrets.</p>
+                    </div>
+                </div>
+
+                <!-- Item 4 -->
+                <div class="mb-10 ml-6 md:ml-8 relative">
+                    <div class="absolute -left-8 md:-left-[35px] mt-1.5 w-4 h-4 rounded-full border-2 border-slate-400 bg-white"></div>
+                    <div class="bg-white p-6 rounded-lg shadow-sm border border-slate-200">
+                        <h3 class="text-xl font-bold text-slate-900">Formateur Mathématiques (Lycée & CPGE)</h3>
+                        <p class="text-sm text-slate-500 mb-3">Kresco Academia</p>
+                        <p class="text-slate-600 text-sm">Accompagnement personnalisé pour la maîtrise des matières d'algèbre, d'analyse et des sciences de l'ingénieur, ainsi que la préparation aux concours des Grandes Écoles.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Section: Contact & Liens (Prête à être complétée par l'utilisateur) -->
+    <section id="contact" class="py-20 bg-dark text-white">
+        <div class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
+            <h2 class="text-3xl font-bold mb-8">Me Contacter</h2>
+            <p class="text-slate-300 mb-10 max-w-2xl mx-auto">
+                Je suis activement à la recherche d'opportunités de stage et de collaboration en ingénierie mécatronique et Industrie 4.0. N'hésitez pas à consulter mes réseaux ou à m'envoyer un email.
+            </p>
+            
+            <div class="flex flex-col md:flex-row justify-center items-center gap-6 mb-12">
+                <!-- Bouton Copier l'Email -->
+                <button onclick="copyEmail()" class="flex items-center px-6 py-3 bg-secondary rounded-lg font-medium hover:bg-blue-600 transition-colors w-full md:w-auto justify-center focus:outline-none cursor-pointer">
+                    <i class="fas fa-envelope mr-3 text-xl"></i> <span id="email-text">inkatto.yassine.yi@gmail.com</span>
+                </button>
+                <a href="https://www.linkedin.com/in/yassine-inkatto" target="_blank" class="flex items-center px-6 py-3 bg-[#0077b5] rounded-lg font-medium hover:bg-blue-600 transition-colors w-full md:w-auto justify-center">
+                    <i class="fab fa-linkedin mr-3 text-xl"></i> Profil LinkedIn
+                </a>
+            </div>
+
+        
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="bg-slate-900 border-t border-slate-800 py-8 text-center text-slate-500 text-sm">
+        <p>&copy; 2025 Yassine Inkatto. ENSAM Meknès. Tous droits réservés.</p>
+    </footer>
+
+    <!-- Script pour le menu mobile -->
+    <script>
+        const btn = document.getElementById('mobile-menu-btn');
+        const menu = document.getElementById('mobile-menu');
+
+        btn.addEventListener('click', () => {
+            menu.classList.toggle('hidden');
+        });
+
+        // Fermer le menu mobile lors du clic sur un lien
+        const mobileLinks = menu.querySelectorAll('a');
+        mobileLinks.forEach(link => {
+            link.addEventListener('click', () => {
+                menu.classList.add('hidden');
+            });
+        });
+
+        // Fonction pour copier l'email au presse-papiers
+        function copyEmail() {
+            const email = "inkatto.yassine.yi@gmail.com";
+            
+            // Création d'un champ temporaire pour exécuter la copie
+            const tempInput = document.createElement("input");
+            tempInput.value = email;
+            document.body.appendChild(tempInput);
+            tempInput.select();
+            document.execCommand("copy");
+            document.body.removeChild(tempInput);
+
+            // Retour visuel pour l'utilisateur
+            const emailText = document.getElementById('email-text');
+            emailText.innerText = "Email copié !";
+            
+            // Remettre le texte initial après 2 secondes
+            setTimeout(() => {
+                emailText.innerText = email;
+            }, 2000);
+        }
+    </script>
+</body>
+</html>
